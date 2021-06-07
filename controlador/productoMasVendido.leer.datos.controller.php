@@ -6,8 +6,7 @@ try {
     $objProducto = new Producto();
     $producto_id = 1;
     $resultado   = $objProducto->productoMasVendido($producto_id);
-    print_r($resultado);
-    //Helper::imprimeJSON(200, "", $resultado);
+
 } catch (Exception $exc) {
     Helper::imprimeJSON(500, $exc->getMessage(), "");
 }

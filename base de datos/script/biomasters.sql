@@ -25,6 +25,20 @@ cargo_id int,
 constraint fk_usuario_cargo_id foreign key(cargo_id) references cargo (cargo_id)
 );
 
+create table categoria
+(
+categoria_id int primary key auto_increment,
+nombre varchar(200) not null
+);
+
+create table tipo
+(
+tipo_id int primary key auto_increment,
+nombre varchar(200) not null,
+categoria_id int,
+constraint fk_promocion_categoria_id foreign key(categoria_id) references categoria(categoria_id)
+);
+
 create table producto
 (
 producto_id int primary key auto_increment,
@@ -32,6 +46,7 @@ nombre varchar(200) not null,
 descripcion varchar(500) not null,
 estado char(1) not null,
 usuario_id int,
+tipo_id int,
 constraint fk_producto_usuario_id foreign key(usuario_id) references usuario(usuario_id)
 );
 
@@ -94,22 +109,10 @@ CONSTRAINT pk_menu_item_accesos PRIMARY KEY (codigo_menu, codigo_menu_item, carg
 CONSTRAINT fk_menu_item_accesos_cargo_id FOREIGN KEY (cargo_id) REFERENCES cargo (cargo_id)
 );
 
-select producto_id, nombre, descripcion, estado from producto where producto_id = 1
-
-update
-                    producto
-                set
-                    nombre = 'aaaaaaaaaaaaa',
-                    descripcion = 'hola',
-                    estado = '2'
+select producto_id, nombre, descripcion, estado from producto where producto_id = 1;
               
-                where
-                    producto_id = 8
-                    
 insert into producto(nombre, descripcion, estado)
 value('aaaa','bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', '0');
-
-select * from cargo;
 
 -- SCRIPT
 insert into cargo
@@ -126,14 +129,8 @@ value(1,'inicio');
 insert into menu
 value(2,'Gestionar');
 
-select* from menu_item_accesos;
-select* from menu_item;
-select* from menu;
-
 delete from menu_item_accesos where codigo_menu_item_acceso = 3;
 delete from menu_item where codigo_menu_item = 3;
-
-
 
 update  menu_item set nombre = 'Promoción' where codigo_menu_item = 3;
 insert into menu_item
@@ -143,11 +140,6 @@ value(2, 1, 'Producto', 'gestionar.producto.view.php');
 insert into menu_item
 value(2, 2, 'Oferta', 'gestionar.promocion.view.php');
 
-update menu_item
-set  nombre = 'Producto'
-where
-	codigo_menu_item = 1 and codigo_menu = 2
-
 insert into menu_item_accesos
 value(1, '1', 1, 1);
 insert into menu_item_accesos
@@ -156,39 +148,53 @@ value(2, '1', 1, 1);
 insert into menu_item_accesos
 value(2, '2',1, 1);
 
-select * from oferta
-
-
-select* from menu;
-select* from menu_item;
-
-select* from menu_item_accesos;
-
-
-
 insert into credenciales_acceso
 value(1,(select md5('123')), 'A', 'A',1);
 
-select
+-- Insert categoria
+select * from categoria;
 
-                            u.nombres,
-                            u.apellidos,
-                            r.clave,
-                            r.tipo,
-                            r.estado,
-                            r.codigo_usuario,
-                            c.descripcion as cargo,
-                            c.cargo_id,
-                            p.producto_id,
-                            p.nombre,
-                            p.descripcion
-                    from
-                        cargo c inner join usuario u
-                    on
-                        (c.cargo_id = u.cargo_id) inner join credenciales_acceso r
-                    on
-                        (u.usuario_id = r.usuario_id) right join producto p 
-					on	
-						( u.usuario_id = p.usuario_id)
-                    where
-                            u.email = 'renzorp_14@hotmail.com';
+insert into categoria(nombre)
+values('Veterinaria');
+insert into categoria(nombre)
+values('Coagulación');
+insert into categoria(nombre)
+values('Bioquímica');
+insert into categoria(nombre)
+values('Cadena de Frío');
+insert into categoria(nombre)
+values('Hematología');
+insert into categoria(nombre)
+values('Equipamiento');
+insert into categoria(nombre)
+values('Inmunología');
+insert into categoria(nombre)
+values('Repuestos');
+insert into categoria(nombre)
+values('Gass y Electrolitos');
+
+-- insert tipo
+select * from categoria;
+
+insert into tipo(nombre, categoria_id)
+values('Analizadores', 1);
+insert into tipo(nombre, categoria_id)
+values('Controles y calibradores', 1);
+insert into tipo(nombre, categoria_id)
+values('Reactivos Hematológicos', 1);
+insert into tipo(nombre, categoria_id)
+values('Analizadores', 2);
+insert into tipo(nombre, categoria_id)
+values('Controles y calibradores', 2);
+insert into tipo(nombre, categoria_id)
+values('Reactivos Hematológicos', 2);
+insert into tipo(nombre, categoria_id)
+values('Analizadores', 3);
+insert into tipo(nombre, categoria_id)
+values('Reactivos', 3);
+insert into tipo(nombre, categoria_id)
+values('Analizadores', 7);
+insert into tipo(nombre, categoria_id)
+values('Pruebas Rápidas', 7);
+insert into tipo(nombre, categoria_id)
+values('Reactivos de Eliza', 7);

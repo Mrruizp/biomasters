@@ -132,14 +132,6 @@ require_once '../controlador/productoMasVendido.leer.datos.controller.php';
 <?php
 for ($i = 0; $i < 6; $i++) {
 
-    //print_r($resultado[$i]['producto_id']);
-    //echo $resultado[$i]['producto_id'];
-
-    /* echo '<pre>';
-    echo 'Datos que llegan por POST'+$i;
-    print_r($resultado[0 + $i]['producto_id']);
-    echo '</pre>';
-     */
     $id   = $resultado[$i]['producto_id'];
     $ruta = "fotos/productos/$id.png";
     //echo $ruta;
