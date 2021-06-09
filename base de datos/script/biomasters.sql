@@ -39,6 +39,7 @@ categoria_id int,
 constraint fk_promocion_categoria_id foreign key(categoria_id) references categoria(categoria_id)
 );
 
+
 create table producto
 (
 producto_id int primary key auto_increment,
@@ -198,3 +199,17 @@ insert into tipo(nombre, categoria_id)
 values('Pruebas Rápidas', 7);
 insert into tipo(nombre, categoria_id)
 values('Reactivos de Eliza', 7);
+
+
+
+
+
+
+
+
+
+
+
+ select producto_id, nombre, descripcion from producto where estado = 1;
+ 
+ select producto_id, nombre, descripcion from producto where estado = 2

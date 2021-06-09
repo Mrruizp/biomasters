@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="page-title-content">
                         <h1>
-                            Sobre nosotros
+                            Productos
                         </h1>
                         <ul>
                             <li style="font-size: 18px">
@@ -19,7 +19,7 @@
                                 </a>
                             </li>
                             <li>
-                                Sobre nosotros
+                                Productos Veterinaria-Analizadores
                             </li>
                         </ul>
                     </div>

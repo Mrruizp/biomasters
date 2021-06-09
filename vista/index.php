@@ -1,5 +1,6 @@
 <?php
 require_once '../controlador/productoMasVendido.leer.datos.controller.php';
+require_once '../controlador/productoLosRecienLlegados.leer.datos.controller.php';
 ?>
 <!doctype html>
 <html lang="zxx">
@@ -131,27 +132,26 @@ require_once '../controlador/productoMasVendido.leer.datos.controller.php';
         <div class="products-slides owl-carousel owl-theme">
 <?php
 for ($i = 0; $i < 6; $i++) {
-
-    $id   = $resultado[$i]['producto_id'];
-    $ruta = "fotos/productos/$id.png";
-    //echo $ruta;
-    echo "<div class='single-products-box'>";
-    echo "        <div class='image'>";
-    echo "            <a href='products-details.html' class='d-block'>";
-    echo "                <img src='$ruta' alt='image'>";
-    echo "            </a>";
-    echo "            <div class='new'>New</div>";
-    echo "            <ul class='buttons-list'>";
-    echo "                <li>";
-    echo "                    <a href='#' data-toggle='modal' data-target='#productsQuickView'>";
-    echo "                        <i class='bx bx-search-alt'></i>";
-    echo "                        <span class='tooltip-label'>Quick View</span>";
-    echo "                    </a>";
-    echo "                </li>";
-    echo "            </ul>";
-    echo "        </div>";
-    echo "    </div>";
-
+    if ($resultado[$i]['producto_id']) {
+        $id   = $resultado[$i]['producto_id'];
+        $ruta = "fotos/productos/$id.png";
+        //echo $ruta;
+        echo "<div class='single-products-box'>";
+        echo "        <div class='image'>";
+        echo "            <a href='products-details.html' class='d-block'>";
+        echo "                <img src='$ruta' alt='image'>";
+        echo "            </a>";
+        echo "            <ul class='buttons-list'>";
+        echo "                <li>";
+        echo "                    <a href='#' data-toggle='modal' data-target='#productsQuickView'>";
+        echo "                        <i class='bx bx-search-alt'></i>";
+        echo "                        <span class='tooltip-label'>Quick View</span>";
+        echo "                    </a>";
+        echo "                </li>";
+        echo "            </ul>";
+        echo "        </div>";
+        echo "    </div>";
+    }
 }
 ?>
         </div>
@@ -164,179 +164,37 @@ for ($i = 0; $i < 6; $i++) {
             <h1>Los recién llegados</h1>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img src="../util/Medishop/html/assets/img/products/products-img5.jpg"
-                                                                             alt="image"></a>
-                        <div class="new">New</div>
-                        <ul class="buttons-list">
+<?php
 
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
+for ($i = 0; $i < 8; $i++) {
+    if ($resultado2[$i]['producto_id']) {
 
-                        <a href="products-details.html" style="font-size: 20px;"><b>Microscope</b></a>
+        $id   = $resultado2[$i]['producto_id'];
+        $ruta = "fotos/productos/$id.png";
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img src="../util/Medishop/html/assets/img/products/products-img6.jpg"
-                                                                             alt="image"></a>
-                        <ul class="buttons-list">
+        echo "    <div class='col-lg-3 col-md-4 col-sm-6'>";
+        echo "        <div class='single-products-box'>";
+        echo "            <div class='image'>";
+        echo "                <a href='products-details.html' class='d-block'><img src='$ruta' alt='image'>";
+        echo "                </a>";
+        echo "                <ul class='buttons-list'>";
+        echo "                    <li>";
+        echo "                        <a href='#' data-toggle='modal' data-target='#productsQuickView'>";
+        echo "                            <i class='bx bx-search-alt'></i>";
+        echo "                            <span class='tooltip-label'>Vista rápida</span>";
+        echo "                        </a>";
+        echo "                    </li>";
+        echo "                </ul>";
+        echo "            </div>";
+        echo "            <div class='content'>";
+        echo "                <h3><a href='products-details.html'>Blood Glucose Meter</a></h3>";
+        echo "            </div>";
+        echo "        </div>";
+        echo "    </div>";
+    }
+}
+?>
 
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <a href="products-details.html" style="font-size: 20px;"><b>Blood Pressure Monitor</b></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img src="../util/Medishop/html/assets/img/products/products-img7.jpg"
-                                                                             alt="image"></a>
-                        <div class="sale">Sale!</div>
-                        <ul class="buttons-list">
-
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <a href="products-details.html" style="font-size: 20px;"><b>Infrared Thermometer</b></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img src="../util/Medishop/html/assets/img/products/products-img8.jpg"
-                                                                             alt="image"></a>
-                        <ul class="buttons-list">
-
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <a href="products-details.html" style="font-size: 20px;"><b>Stethoscope</b></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img src="../util/Medishop/html/assets/img/products/products-img9.jpg"
-                                                                             alt="image"></a>
-                        <ul class="buttons-list">
-
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <a href="products-details.html" style="font-size: 20px;"><b>Vail Vaccine</b></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img
-                                src="../util/Medishop/html/assets/img/products/products-img10.jpg" alt="image"></a>
-                        <ul class="buttons-list">
-
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <a href="products-details.html" style="font-size: 20px;"><b>Hand Sanitizer Gel</b></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img
-                                src="../util/Medishop/html/assets/img/products/products-img11.jpg" alt="image"></a>
-                        <div class="new">New</div>
-                        <ul class="buttons-list">
-
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        ><a href="products-details.html" style="font-size: 20px;"><b>Inhalers</b></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="single-products-box">
-                    <div class="image">
-                        <a href="products-details.html" class="d-block"><img
-                                src="../util/Medishop/html/assets/img/products/products-img12.jpg" alt="image"></a>
-                        <div class="sale">Sale!</div>
-                        <ul class="buttons-list">
-
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
-                                    <i class='bx bx-search-alt'></i>
-                                    <span class="tooltip-label">Vista rápida</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <a href="products-details.html" style="font-size: 20px;"><b>Blood Glucose Meter</b></a>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -705,7 +563,7 @@ for ($i = 0; $i < 6; $i++) {
 
 <?php include_once 'scripts.view.php';?>
 <script src="js/index.js" type="text/javascript"></script>
-<script src="js/productos.js" type="text/javascript"></script>
+<!--<script src="js/productos.js" type="text/javascript"></script>-->
 
 
 </body>

@@ -121,14 +121,47 @@ require_once '../controlador/perfil.usuario.leer.datos.controller.php';
 
                                     Estado
                                     <select class="form-control input-sm" name="txtEstado" id="txtEstado" required>
-                                      <option value="">-</option>
+                                      <option>-</option>
                                       <option value="1">Más Vendido</option>
                                       <option value="2">Los recién llegados</option>
                                       <option value="3">Normal</option>
                                     </select>
                                 </p>
                             </div>
+                            <div class="col-6">
+                                <p>
+                                    categoria
+                                    <select class="form-control input-sm" id="txtCategoria" name="txtCategoria" required="">
+                                        <option>-</option>
+                                        <option value="1">Veterinaria</option>
+                                        <option value="2">Coagulación</option>
+                                        <option value="3">Bioquímica</option>
+                                        <option value="4">Cadena de Frío</option>
+                                        <option value="5">Hematología</option>
+                                        <option value="6">Equipamiento</option>
+                                        <option value="7">Inmunología</option>
+                                        <option value="8">Repuestos</option>
+                                        <option value="9">Gass y Electrolitos</option>
+                                    </select>
+                                </p>
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>
+                                    Tipo
+                                    <select class="form-control input-sm" id="txtTipo" name="txtTipo" required="">
+                                        <option>-</option>
+                                        <option value="1">Analizadores</option>
+                                        <option value="2">Controles y calibradores</option>
+                                        <option value="3">Reactivos Hematológicos</option>
+                                        <option value="4">Reactivos</option>
+                                        <option value="5">Pruebas Rápidas</option>
+                                        <option value="6">Reactivos de Eliza</option>
+                                    </select>
+                                </p>
+                            </div>
+                          </div>
                           <div class="row">
                             <div class="col-6">
                                 <section id="file-preview-zone" name="file-preview-zone"
@@ -141,16 +174,16 @@ require_once '../controlador/perfil.usuario.leer.datos.controller.php';
                             <div class="col-6">
                                 <div id="foto_id" name="foto_id"
                                 class="card-body d-flex justify-content-between align-items-center input-group">
-                                    <label class="input-group-btn">
+
                                         <span class="btn btn-info">
                                            <i class="fa fa-camera"></i><input type="file" style="display: none;" multiple accept="image/png,image/jpeg" id="file-upload" name="file-upload">
                                         </span>
-                                    </label>
+
                                     <input type="text" id="p_foto" name="p_foto" class="form-control" readonly>
                                 </div>
                                 <span class="help-block">
                                 Seleccione una foto
-                            </span>
+                                </span>
                             </div>
 
                         </div>

@@ -30,7 +30,7 @@ function listarPromocion() {
                   html += '                  <div class="content two">';
                   html += '                      <span class="sub-title">' + item.nombre + '</span>';
                   html += '                      <h3><a href="products-grid.html">' + item.descripcion + '</a></h3>';
-                  html += '                      <a href="products-grid.html" class="link-btn"><i class="bx bx-cart"></i> Shop Now</a>';
+                  
                   html += '                  </div>';
                   html += '              </div>';
                   html += '          </div>';
@@ -42,7 +42,7 @@ function listarPromocion() {
                   html += '                  <div class="content">';
                   html += '                      <span class="sub-title">' + item.nombre + '</span>';
                   html += '                      <h3><a href="products-grid.html">' + item.descripcion + '</a></h3>';
-                  html += '                      <a href="products-grid.html" class="link-btn"><i class="bx bx-cart"></i> Shop Now</a>';
+                  
                   html += '                  </div>';
                   html += '              </div>';
                   html += '          </div>';

@@ -35,7 +35,7 @@ switch ($cadena) {
         echo "<li class='nav-item'><a href='nosotros.php' class='nav-link'>NOSOTROS</a></li>";
         echo "<li class='nav-item'><a href='' class='nav-link'><i class='bx bx-cart'></i> PRODUCTOS <i class='bx bx-chevron-down'></i></a>";
         echo "<ul class='dropdown-menu'><li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Veterinaria</a><ul class='dropdown-menu'>
-        <li class='nav-item'><a href='producto.php' class='nav-link'>Analizadores</a></li>
+        <li class='nav-item'><a href='producto.php' onClick='Href();''  class='nav-link'>Analizadores</a></li>
         <li class='nav-item'><a href='producto.php' class='nav-link'>Controles y calibradores</a></li>
         <li class='nav-item'><a href='producto.php' class='nav-link'>Reactivos Hematológicos</a></li></ul>
 
@@ -60,7 +60,6 @@ switch ($cadena) {
 
         <li class='nav-item'><a href='producto.php' class='nav-link'>Repuestos</a></li>
         <li class='nav-item'><a href='producto.php' class='nav-link'>Gass y Electrolitos</a></li></ul></li>";
-
         echo "<li class='nav-item'><a href='about.html' class='nav-link'>PROMOCIONES</a></li>";
         echo "<li class='nav-item'><a href='contacto.php' class='nav-link'>CONTÁCTANOS</a></li>";
         echo "<li class='nav-item'><a href='login.php' class='nav-link'><i class='bx bx-user'></i> INICIAR SESIÓN</a></li>";

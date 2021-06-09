@@ -5,19 +5,21 @@ require_once '../data/Conexion.class.php';
 class Producto extends Conexion
 {
 
-    public function agregar($nombre, $descripcion, $estado)
+    public function agregar($nombre, $descripcion, $estado, $codCategoria, $codTipo)
     {
         $this->dblink->beginTransaction();
 
         try {
 
             /*Insertar en la tabla laboratorio*/
-            $sql = "insert into producto(nombre, descripcion, estado, usuario_id)
-                    value('$nombre','$descripcion', '$estado', 1);";
+            $sql = "insert into producto(nombre, descripcion, estado, usuario_id, tipo_id, categoria_id)
+                    value('$nombre','$descripcion', '$estado', 1, $codTipo, $codCategoria);";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_nombre", $this->$nombre);
             $sentencia->bindParam(":p_descripcion", $this->$descripcion);
             $sentencia->bindParam(":p_estado", $this->$estado);
+            $sentencia->bindParam(":p_codTipo", $this->$codTipo);
+            $sentencia->bindParam(":p_codCategoria", $this->$codCategoria);
 
             $sentencia->execute();
 
@@ -65,12 +67,26 @@ class Producto extends Conexion
         }
     }
 
+    public function listarLosRecienLLegados($producto_id)
+    {
+        try {
+            $sql = "
+                    select producto_id, nombre, descripcion from producto where estado = 2;
+                ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $exc) {
+            throw $exc;
+        }
+    }
     public function leerDatos_producto($codProducto)
     {
         try {
             $sql = "
                     select
-                        producto_id, nombre, descripcion, estado
+                        producto_id, nombre, descripcion, estado, tipo_id, categoria_id
                     from
                         producto
                     where
@@ -88,16 +104,18 @@ class Producto extends Conexion
         }
     }
 
-    public function editar($codProducto, $nombre, $descripcion, $estado)
+    public function editar($codProducto, $nombre, $descripcion, $estado, $codCategoria, $codTipo)
     {
         try {
             $sql = "
                 update
                     producto
                 set
-                    nombre = :p_nombre,
-                    descripcion = :p_descripcion,
-                    estado = :p_estado
+                    nombre       = :p_nombre,
+                    descripcion  = :p_descripcion,
+                    estado       = :p_estado,
+                    tipo_id      = :p_codTipo,
+                    categoria_id = :p_codCategoria
                 where
                     producto_id = :p_codProducto;
                 ";
@@ -106,6 +124,8 @@ class Producto extends Conexion
             $sentencia->bindParam(":p_nombre", $nombre);
             $sentencia->bindParam(":p_descripcion", $descripcion);
             $sentencia->bindParam(":p_estado", $estado);
+            $sentencia->bindParam(":p_codTipo", $codTipo);
+            $sentencia->bindParam(":p_codCategoria", $codCategoria);
             $sentencia->execute();
 
             return true;
@@ -124,7 +144,9 @@ class Producto extends Conexion
                             producto_id,
                             nombre,
                             descripcion,
-                            estado
+                            estado,
+                            tipo_id,
+                            categoria_id
                         from
                             producto;
                 ";

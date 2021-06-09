@@ -27,19 +27,22 @@ try {
     exit();
     }
      */
+    $codCategoria = $_POST["txtCategoria"];
+    $codTipo      = $_POST["txtTipo"];
+
     $codProducto = $_POST["textCod_prod"];
     $nombre      = $_POST["txtNombre"];
     $descripcion = $_POST["txtDescripcion"];
     $estado      = $_POST["txtEstado"];
     //$tipoOperacion = $_POST["p_tipo_ope"];
 
-    $objProducto = new Producto();
+    //$objProducto = new Producto();
     if (!$codProducto) {
         //print_r("entraaaaaaaaa1");
-        $resultado = $objProducto->agregar($nombre, $descripcion, $estado);
+        $resultado = $objProducto->agregar($nombre, $descripcion, $estado, $codCategoria, $codTipo);
     } else {
         //print_r($_POST);
-        $resultado = $objProducto->editar($codProducto, $nombre, $descripcion, $estado);
+        $resultado = $objProducto->editar($codProducto, $nombre, $descripcion, $estado, $codCategoria, $codTipo);
         // print_r($resultado);
     }
 

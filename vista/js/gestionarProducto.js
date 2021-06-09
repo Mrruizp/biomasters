@@ -23,6 +23,8 @@ function listar() {
             html += '<th style="text-align: center">NOMBRE</th>';
             html += '<th style="text-align: center">DESCRIPCIÓN</th>';
             html += '<th style="text-align: center">ESTADO</th>';
+            html += '<th style="text-align: center">TIPO</th>';
+            html += '<th style="text-align: center">CATEGORIA</th>';
             html += '<th style="text-align: center; width:120px"">OPCIÓN</th>';
             html += '</tr>';
             html += '</thead>';
@@ -42,8 +44,39 @@ function listar() {
                 if(item.estado == '3')
                     html += '<td align="center" style="font-weight:normal">El normal</td>';
                 html += '</td>';
-                html += '<td align="center">';
                 
+                if(item.tipo_id == '1')
+                    html += '<td align="center" style="font-weight:normal">Analizadores</td>';
+                if(item.tipo_id == '2')
+                    html += '<td align="center" style="font-weight:normal">Controles y calibradores</td>';
+                if(item.tipo_id == '3')
+                    html += '<td align="center" style="font-weight:normal">Reactivos Hematológicos</td>';
+                if(item.tipo_id == '4')
+                    html += '<td align="center" style="font-weight:normal">Reactivos</td>';
+                if(item.tipo_id == '5')
+                    html += '<td align="center" style="font-weight:normal">Pruebas Rápidas</td>';
+                if(item.tipo_id == '6')
+                    html += '<td align="center" style="font-weight:normal">Reactivos de Eliza</td>';
+
+                if(item.categoria_id == '1')
+                    html += '<td align="center" style="font-weight:normal">Veterinaria</td>';
+                if(item.categoria_id == '2')
+                    html += '<td align="center" style="font-weight:normal">Coagulación</td>';
+                if(item.categoria_id == '3')
+                    html += '<td align="center" style="font-weight:normal">Bioquímica</td>';
+                if(item.categoria_id == '4')
+                    html += '<td align="center" style="font-weight:normal">Cadena de Frío</td>';
+                if(item.categoria_id == '5')
+                    html += '<td align="center" style="font-weight:normal">Hematología</td>';
+                if(item.categoria_id == '6')
+                    html += '<td align="center" style="font-weight:normal">Equipamiento</td>';
+                if(item.categoria_id == '7')
+                    html += '<td align="center" style="font-weight:normal">Inmunología</td>';
+                if(item.categoria_id == '8')
+                    html += '<td align="center" style="font-weight:normal">Repuestos</td>';
+                if(item.categoria_id == '9')
+                    html += '<td align="center" style="font-weight:normal">Gass y Electrolitos</td>';
+                html += '<td align="center">';
                 html += '<button type="button" title="Editar" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" onclick="leerDatos(' + item.producto_id + ')"><ion-icon name="create-outline"></ion-icon></button>';
                 html += '&nbsp;&nbsp;'
                 html += '<button type="button" title="Eliminar" class="btn btn-danger btn-xs" onclick="eliminar(' + item.producto_id + ')"><ion-icon name="trash-sharp"></ion-icon></button>';
@@ -91,6 +124,8 @@ function leerDatos(producto_id) {
             $("#txtDescripcion").val(jsonResultado.datos.descripcion);
             $("#txtEstado").val(jsonResultado.datos.estado);
             $("#textCod_prod").val(jsonResultado.datos.producto_id);
+            $("#txtCategoria").val(jsonResultado.datos.categoria_id);
+            $("#txtTipo").val(jsonResultado.datos.tipo_id);
 
             $("#p_foto").val(jsonResultado.datos.producto_id+".png");
 
