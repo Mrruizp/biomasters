@@ -17,8 +17,8 @@
                             <a href="index.php">
                                 Inicio
                             </a>
-                        </li style="font-size: 18px">
-                        <li>
+                        </li>
+                        <li style="font-size: 18px">
                             Sobre nosotros
                         </li>
                     </ul>

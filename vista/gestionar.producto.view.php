@@ -174,12 +174,14 @@ require_once '../controlador/perfil.usuario.leer.datos.controller.php';
                             <div class="col-6">
                                 <div id="foto_id" name="foto_id"
                                 class="card-body d-flex justify-content-between align-items-center input-group">
-
+                                    <label class="input-group-btn">
                                         <span class="btn btn-info">
-                                           <i class="fa fa-camera"></i><input type="file" style="display: none;" multiple accept="image/png,image/jpeg" id="file-upload" name="file-upload">
+                                           <i class="fa fa-camera"></i>
+                                           <input type="file" style="display: none;" multiple="" accept="image/png,image/jpeg,image/jpg" id="file-upload" name="file-upload">
                                         </span>
 
-                                    <input type="text" id="p_foto" name="p_foto" class="form-control" readonly>
+                                      </label>
+                                      <input style="margin-top: -8px;" type="text" id="p_foto" name="p_foto" class="form-control" readonly>
                                 </div>
                                 <span class="help-block">
                                 Seleccione una foto

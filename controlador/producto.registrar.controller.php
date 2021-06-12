@@ -36,10 +36,11 @@ try {
     $estado      = $_POST["txtEstado"];
     //$tipoOperacion = $_POST["p_tipo_ope"];
 
-    //$objProducto = new Producto();
+    $objProducto = new Producto();
     if (!$codProducto) {
-        //print_r("entraaaaaaaaa1");
+
         $resultado = $objProducto->agregar($nombre, $descripcion, $estado, $codCategoria, $codTipo);
+        //print_r($codTipo);
     } else {
         //print_r($_POST);
         $resultado = $objProducto->editar($codProducto, $nombre, $descripcion, $estado, $codCategoria, $codTipo);

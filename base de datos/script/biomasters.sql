@@ -48,6 +48,7 @@ descripcion varchar(500) not null,
 estado char(1) not null,
 usuario_id int,
 tipo_id int,
+categoria_id int,
 constraint fk_producto_usuario_id foreign key(usuario_id) references usuario(usuario_id)
 );
 
@@ -109,8 +110,6 @@ acceso char(1) not null,
 CONSTRAINT pk_menu_item_accesos PRIMARY KEY (codigo_menu, codigo_menu_item, cargo_id),
 CONSTRAINT fk_menu_item_accesos_cargo_id FOREIGN KEY (cargo_id) REFERENCES cargo (cargo_id)
 );
-
-select producto_id, nombre, descripcion, estado from producto where producto_id = 1;
               
 insert into producto(nombre, descripcion, estado)
 value('aaaa','bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', '0');
@@ -201,15 +200,4 @@ insert into tipo(nombre, categoria_id)
 values('Reactivos de Eliza', 7);
 
 
-
-
-
-
-
-
-
-
-
- select producto_id, nombre, descripcion from producto where estado = 1;
- 
- select producto_id, nombre, descripcion from producto where estado = 2
+select * from producto;

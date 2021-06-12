@@ -27,15 +27,16 @@
 <?php
 $url    = $_SERVER["REQUEST_URI"];
 $cadena = substr($url, 26);
+$pagina = explode('?', $cadena);
 //print_r($cadena);
 
-switch ($cadena) {
+switch ($pagina[0]) {
     case 'index.php':
         echo "<li class='nav-item'><a href='javascript:void(0);' class='nav-link active'>INICIO</a></li>";
         echo "<li class='nav-item'><a href='nosotros.php' class='nav-link'>NOSOTROS</a></li>";
         echo "<li class='nav-item'><a href='' class='nav-link'><i class='bx bx-cart'></i> PRODUCTOS <i class='bx bx-chevron-down'></i></a>";
         echo "<ul class='dropdown-menu'><li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Veterinaria</a><ul class='dropdown-menu'>
-        <li class='nav-item'><a href='producto.php' onClick='Href();''  class='nav-link'>Analizadores</a></li>
+        <li class='nav-item'><a href='#' data-tipo='1' data-categoria='1'  class='nav-link btn-analizar_veterinaria'>Analizadores</a></li>
         <li class='nav-item'><a href='producto.php' class='nav-link'>Controles y calibradores</a></li>
         <li class='nav-item'><a href='producto.php' class='nav-link'>Reactivos Hematológicos</a></li></ul>
 

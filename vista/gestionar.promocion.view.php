@@ -155,13 +155,12 @@ require_once '../controlador/perfil.usuario.leer.datos.controller.php';
                                             <div class="card-body d-flex justify-content-between align-items-center input-group" id="foto_id" name="foto_id">
                                                 <label class="input-group-btn">
                                                     <span class="btn btn-info">
-                                                        <i class="fa fa-camera">
-                                                        </i>
+                                                        <i class="fa fa-camera"></i>
                                                         <input accept="image/png,image/jpeg,image/jpg" id="file-upload" multiple="" name="file-upload" style="display: none;" type="file">
-                                                        </input>
+
                                                     </span>
                                                 </label>
-                                                <input class="form-control" id="p_foto" name="p_foto" readonly="" type="text">
+                                                <input style="margin-top: -8px;" class="form-control" id="p_foto" name="p_foto" readonly="" type="text">
                                                 </input>
                                             </div>
                                             <span class="help-block">
