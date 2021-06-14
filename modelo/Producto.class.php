@@ -81,6 +81,51 @@ class Producto extends Conexion
             throw $exc;
         }
     }
+
+    public function listarProducto_tipo_categoria($idtipo, $idcategoria)
+    {
+        try {
+            $sql = "
+                    select
+                        producto_id,
+                        nombre,
+                        descripcion
+                    from
+                        producto
+                    where
+                        tipo_id = $idtipo and
+                        categoria_id = $idcategoria;
+                ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $exc) {
+            throw $exc;
+        }
+    }
+
+    public function listar_contar($idtipo, $idcategoria)
+    {
+        try {
+            $sql = "
+                    select
+                        count(producto_id) as total
+                    from
+                        producto
+                    where
+                        tipo_id = $idtipo and
+                        categoria_id = $idcategoria;
+                ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $exc) {
+            throw $exc;
+        }
+    }
+
     public function leerDatos_producto($codProducto)
     {
         try {

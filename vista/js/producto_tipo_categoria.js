@@ -5,7 +5,7 @@ $(document).ready(function() {
    let idtipo = getQueryVariable('tipo');
    let idcategoria = getQueryVariable('categoria');
 
-   listarLosMasVendidos(idtipo, idcategoria);
+   producto_tipo_categoria(idtipo, idcategoria);
 });
 
 
@@ -23,18 +23,23 @@ function getQueryVariable(variable) {
         return false;
     }
 
-function listarLosMasVendidos(idtipo, idcategoria) {
+function producto_tipo_categoria(idtipo, idcategoria) {
     $.post
             (
-                    "../controlador/producto.listarCatalogo.controller.php"
-
+                    "../controlador/producto.listarCatalogo.controller.php",
+                    {
+                        p_idtipo: idtipo,
+                        p_idcategoria: idcategoria
+                    }
+                    
                     ).done(function (resultado) {
         var datosJSON = resultado;
 
         if (datosJSON.estado === 200) {
             var html = "";
-  
+            html += '<div class="container">';
             $.each(datosJSON.datos, function (i, item) {
+            html += '<div class="row">'    
             html += '	<div class="col-lg-3 col-md-4 col-sm-6">';
             html += '                <div class="single-products-box">';
             html += '                    <div class="image">';
@@ -66,38 +71,20 @@ function listarLosMasVendidos(idtipo, idcategoria) {
             html += '                    </div>';
             html += '                </div>';
             html += '            </div>';
+            html += '</div>';
                 
-                
-                
-
-                html += '<div class="single-products-box">';
-                html += '   <div class="image">';
-                html += '                        <a href="products-details.html" class="d-block">';
-                html += '                           <img src="fotos/productos/' + item.producto_id + '.png" alt="image">';
-                html += '                        </a>';
-                html += '       <div class="new">New</div>';
-                html += '       <ul class="buttons-list">';
-                html += '           <li>';
-                html += '               <a href="#" data-toggle="modal" data-target="#productsQuickView">';
-                html += '                   <i class="bx bx-search-alt"></i>';
-                html += '                   <span class="tooltip-label">Quick View</span>';
-                html += '               </a>';
-                html += '           </li>';
-                html += '       </ul>';
-                html += '   /div>';
-                html += '</div>';
-              
             });
+            html += '</div>';
                 
          
           
-                $("#listar_LosMasVendidos").html(html);
-        } else {
-            swal("Mensaje del sistema", resultado , "warning");
+                $("#lista_producto_tipo_catalogo").html(html);
+        }else{
+
         }
 
     }).fail(function (error) {
         var datosJSON = $.parseJSON(error.responseText);
-        swal("Error", datosJSON.mensaje , "error"); 
+        //swal("Error", datosJSON.mensaje , "error"); 
     });
 }

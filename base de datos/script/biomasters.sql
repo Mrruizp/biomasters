@@ -199,5 +199,10 @@ values('Pruebas Rápidas', 7);
 insert into tipo(nombre, categoria_id)
 values('Reactivos de Eliza', 7);
 
-
-select * from producto;
+select
+                        *
+                    from
+                        producto
+                    where
+                        tipo_id = 1 and
+                        categoria_id = 1

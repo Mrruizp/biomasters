@@ -20,3 +20,12 @@
 		    $('#slider').nivoSlider();
 		});
 	</script>
+
+<script type="text/javascript">
+	$(document).on('click','.btn-analizar_veterinaria', function(){
+    let _tipo = $(this).data('tipo');
+    let _categoria = $(this).data('categoria');
+    window.location.replace('producto.php?tipo='+_tipo+'?categoria='+_categoria);
+
+});
+</script>
