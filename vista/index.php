@@ -143,7 +143,7 @@ for ($i = 0; $i < 6; $i++) {
         echo "            </a>";
         echo "            <ul class='buttons-list'>";
         echo "                <li>";
-        echo "                    <a href='#' data-toggle='modal' data-target='#productsQuickView'>";
+        echo "                    <a href='#' data-toggle='modal' data-target='#productsQuickView' onclick='leerDatos($id);'>";
         echo "                        <i class='bx bx-search-alt'></i>";
         echo "                        <span class='tooltip-label'>Quick View</span>";
         echo "                    </a>";
@@ -179,7 +179,7 @@ for ($i = 0; $i < 8; $i++) {
         echo "                </a>";
         echo "                <ul class='buttons-list'>";
         echo "                    <li>";
-        echo "                        <a href='#' data-toggle='modal' data-target='#productsQuickView'>";
+        echo "                        <a href='#' data-toggle='modal' data-target='#productsQuickView' onclick='leerDatos($id);'>";
         echo "                            <i class='bx bx-search-alt'></i>";
         echo "                            <span class='tooltip-label'>Vista rápida</span>";
         echo "                        </a>";
@@ -533,7 +533,7 @@ for ($i = 0; $i < 8; $i++) {
 </div>
 
 
-<div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade productsQuickView" id="productsQuickView" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -542,15 +542,14 @@ for ($i = 0; $i < 8; $i++) {
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
                     <div class="products-image">
-                        <img src="../util/Medishop/html/assets/img/products/products-img1.jpg" alt="image">
+                        <img id="ruta_producto" src="" alt="image">
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6" style="margin-top: -200px;">
                     <div class="products-content">
-                        <h3><a href="products-details.html">Infrared Thermometer Gun</a></h3>
+                        <h3 id="titulo_producto"></h3>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
+                        <p id="decripcion_producto"></p>
 
                     </div>
                 </div>
@@ -564,6 +563,7 @@ for ($i = 0; $i < 8; $i++) {
 <?php include_once 'scripts.view.php';?>
 <script src="js/index.js" type="text/javascript"></script>
 <!--<script src="js/productos.js" type="text/javascript"></script>-->
+
 
 
 </body>

@@ -82,7 +82,7 @@ for ($i = 0; $i < $total; $i++) {
         //echo "                <div class='sale'>Sale!</div>";
         echo "                <ul class='buttons-list'>";
         echo "                    <li>";
-        echo "                    <a href='#' data-toggle='modal' data-target='#productsQuickView'>";
+        echo "                    <a href='#' data-toggle='modal' data-target='#productsQuickView'onclick='leerDatos($id);'>";
         echo "                    <i class='bx bx-search-alt'></i>";
         echo "                    <span class='tooltip-label'>Quick View</span>";
         echo "                    </a>";
@@ -138,71 +138,15 @@ for ($i = 0; $i < $total; $i++) {
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-md-6">
                                 <div class="products-image">
-                                    <img alt="image" src="../util/Medishop/html/assets/img/products/products-img1.jpg">
+                                    <img alt="image" id="ruta_producto" src="">
                                     </img>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="products-content">
-                                    <h3>
-                                        <a href="products-details.html">
-                                            Infrared Thermometer Gun
-                                        </a>
-                                    </h3>
-                                    <div class="products-review">
-                                        <div class="rating">
-                                            <i class="bx bxs-star">
-                                            </i>
-                                            <i class="bx bxs-star">
-                                            </i>
-                                            <i class="bx bxs-star">
-                                            </i>
-                                            <i class="bx bxs-star">
-                                            </i>
-                                            <i class="bx bxs-star">
-                                            </i>
-                                        </div>
-                                        <a class="rating-count" href="products-details.html">
-                                            (3 reviews)
-                                        </a>
-                                    </div>
-                                    <div class="price">
-                                        <span>
-                                            $69.00
-                                        </span>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                    <div class="products-add-to-cart">
-                                        <div class="quantities">
-                                            <span class="sub-title">
-                                                Quantities:
-                                            </span>
-                                            <div class="input-counter">
-                                                <span class="minus-btn">
-                                                    <i class="bx bx-minus">
-                                                    </i>
-                                                </span>
-                                                <input type="text" value="1">
-                                                    <span class="plus-btn">
-                                                        <i class="bx bx-plus">
-                                                        </i>
-                                                    </span>
-                                                </input>
-                                            </div>
-                                        </div>
-                                        <button class="default-btn" type="submit">
-                                            <i class="flaticon-trolley">
-                                            </i>
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                    <a class="add-to-wishlist" href="#">
-                                        <i class="bx bx-heart">
-                                        </i>
-                                        Add to Wishlist
-                                    </a>
+                                    <h3 id="titulo_producto"></h3>
+                                    <p id="decripcion_producto"></p>
+
                                     <ul class="social-share">
                                         <li>
                                             <span>
@@ -210,26 +154,14 @@ for ($i = 0; $i < $total; $i++) {
                                             </span>
                                         </li>
                                         <li>
-                                            <a href="#" target="#">
+                                            <a href="https://www.facebook.com/Biomasters-Medical-102939435252436" target="_blank">
                                                 <i class="bx bxl-facebook-square">
                                                 </i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" target="#">
-                                                <i class="bx bxl-twitter">
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="#">
+                                            <a href="https://www.instagram.com/biomastersmedical/" target="_blank">
                                                 <i class="bx bxl-instagram-alt">
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="#">
-                                                <i class="bx bxl-linkedin-square">
                                                 </i>
                                             </a>
                                         </li>

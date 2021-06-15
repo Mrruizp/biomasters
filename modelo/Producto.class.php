@@ -52,6 +52,28 @@ class Producto extends Conexion
         }
     }
 
+    public function listarProductoId($codProducto)
+    {
+        try {
+            $sql = "
+                    select
+                        producto_id,
+                        nombre,
+                        descripcion
+                    from
+                        producto
+                    where
+                        producto_id = $codProducto;
+                ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $exc) {
+            throw $exc;
+        }
+    }
+
     public function productoMasVendido($producto_id)
     {
         try {

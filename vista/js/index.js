@@ -65,6 +65,26 @@ function listarPromocion() {
     });
 }
 
+function leerDatos(codProducto) {
+    $.post
+            (
+                    "../controlador/producto.id.leer.datos.controller.php",
+                    {
+                        p_codProducto: codProducto
+                    }
+            ).done(function (resultado) {
+        var jsonResultado = resultado;
+        if (jsonResultado.estado === 200) {
+            document.getElementById("titulo_producto").innerHTML = jsonResultado.datos.nombre;
+            document.getElementById("decripcion_producto").innerHTML = jsonResultado.datos.descripcion;
+            document.getElementById("ruta_producto").src = "fotos/productos/"+codProducto+".png";
+            
+        }
+    }).fail(function (error) {
+        var datosJSON = $.parseJSON(error.responseText);
+        swal("Error", datosJSON.mensaje, "error");
+    });
+}
 
 
 
