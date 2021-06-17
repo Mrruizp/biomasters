@@ -71,6 +71,10 @@ producto_id int,
 constraint fk_comentario_cliente_id foreign key(cliente_id) references cliente (cliente_id),
 constraint fk_producto_id_producto_id foreign key(producto_id) references producto (producto_id)
 );
+alter table comentario
+add column nombre_cliente varchar(100);
+alter table comentario
+add column email_cliente varchar(100);
 
 -- alter table usuario
 -- add constraint fk_usuario_cargo_id foreign key(cargo_id) references cargo (cargo_id)
@@ -200,9 +204,8 @@ insert into tipo(nombre, categoria_id)
 values('Reactivos de Eliza', 7);
 
 select
-                        *
-                    from
-                        producto
-                    where
-                        tipo_id = 1 and
-                        categoria_id = 1
+                            nombre_cliente,
+                            decripcion_comentario,
+                            email_cliente
+                        from
+                            comentario;

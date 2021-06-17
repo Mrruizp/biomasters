@@ -12,6 +12,8 @@
 <script src="../util/Medishop/html/assets/js/ajaxchimp.min.js"></script>
 <script src="../util/Medishop/html/assets/js/main.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
 	<script src="../util/nivo-slider/js/jquery.nivo.slider.js"></script>
 

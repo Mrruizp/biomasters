@@ -78,7 +78,7 @@ switch ($pagina[0]) {
 
         <li class='nav-item'><a href='producto.php' class='nav-link'>Repuestos</a></li>
         <li class='nav-item'><a href='producto.php' class='nav-link'>Gass y Electrolitos</a></li></ul></li>";
-        echo "<li class='nav-item'><a href='about.html' class='nav-link'>PROMOCIONES</a></li>";
+        //echo "<li class='nav-item'><a href='about.html' class='nav-link'>PROMOCIONES</a></li>";
         echo "<li class='nav-item'><a href='contacto.php' class='nav-link'>CONTÁCTANOS</a></li>";
         echo "<li class='nav-item'><a href='login.php' class='nav-link'><i class='bx bx-user'></i> INICIAR SESIÓN</a></li>";
         break;
@@ -129,7 +129,7 @@ switch ($pagina[0]) {
 
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Repuestos</a></li>
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Gass y Electrolitos</a></li></ul></li>";
-        echo "<li class='nav-item'><a href='promociones.php' class='nav-link'>PROMOCIONES</a></li>";
+        //echo "<li class='nav-item'><a href='promociones.php' class='nav-link'>PROMOCIONES</a></li>";
         echo "<li class='nav-item'><a href='contacto.php' class='nav-link'>CONTÁCTANOS</a></li>";
         echo "<li class='nav-item'><a href='login.php' class='nav-link'><i class='bx bx-user'></i> INICIAR SESIÓN</a></li>";
         break;
@@ -163,7 +163,7 @@ switch ($pagina[0]) {
 
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Repuestos</a></li>
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Gass y Electrolitos</a></li></ul></li>";
-        echo "<li class='nav-item'><a href='promociones.php' class='nav-link'>PROMOCIONES</a></li>";
+        //echo "<li class='nav-item'><a href='promociones.php' class='nav-link'>PROMOCIONES</a></li>";
         echo "<li class='nav-item'><a href='contacto.php' class='nav-link'>CONTÁCTANOS</a></li>";
         echo "<li class='nav-item'><a href='login.php' class='nav-link'><i class='bx bx-user'></i> INICIAR SESIÓN</a></li>";
         break;
@@ -186,7 +186,7 @@ switch ($pagina[0]) {
         <li class='nav-item'><a href='#' data-tipo='2' data-categoria='3' class='nav-link btn-analizar_veterinaria'>Reactivos</a></li></ul>
 
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Cadena de Frío</a></li>
-        <li class='nav-item'><a href='javascript:void(0);p' class='nav-link'>Hematología</a></li>
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Hematología</a></li>
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Equipamiento</a></li>
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Inmunología</a>
         <ul class='dropdown-menu'>
@@ -197,8 +197,43 @@ switch ($pagina[0]) {
 
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Repuestos</a></li>
         <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Gass y Electrolitos</a></li></ul></li>";
-        echo "<li class='nav-item'><a href='promociones.php' class='nav-link'>PROMOCIONES</a></li>";
+        //echo "<li class='nav-item'><a href='promociones.php' class='nav-link'>PROMOCIONES</a></li>";
         echo "<li class='nav-item'><a href='contacto.php' class='nav-link active'>CONTÁCTANOS</a></li>";
+        echo "<li class='nav-item'><a href='login.php' class='nav-link'><i class='bx bx-user'></i> INICIAR SESIÓN</a></li>";
+        break;
+
+    case 'producto-detalle.php':
+        echo "<li class='nav-item'><a href='index.php' class='nav-link'>INICIO</a></li>";
+        echo "<li class='nav-item'><a href='nosotros.php' class='nav-link'>NOSOTROS</a></li>";
+        echo "<li class='nav-item'><a href='javascript:void(0);' class='nav-link active'><i class='bx bx-cart'></i> PRODUCTOS <i class='bx bx-chevron-down'></i></a>";
+        echo "<ul class='dropdown-menu'><li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Veterinaria</a><ul class='dropdown-menu'>
+        <li class='nav-item'><a href='#' data-tipo='1' data-categoria='1' class='nav-link btn-analizar_veterinaria'>Analizadores</a></li>
+        <li class='nav-item'><a href='#' data-tipo='2' data-categoria='1' class='nav-link btn-analizar_veterinaria'>Controles y calibradores</a></li>
+        <li class='nav-item'><a href='#' data-tipo='3' data-categoria='1' class='nav-link btn-analizar_veterinaria'>Reactivos Hematológicos</a></li></ul>
+
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Coagulación</a><ul class='dropdown-menu'>
+        <li class='nav-item'><a href='#' data-tipo='1' data-categoria='2' class='nav-link btn-analizar_veterinaria'>Analizadores</a></li>
+        <li class='nav-item'><a href='#' data-tipo='2' data-categoria='2' class='nav-link btn-analizar_veterinaria'>Controles y calibradores</a></li>
+        <li class='nav-item'><a href='#' data-tipo='3' data-categoria='2' class='nav-link btn-analizar_veterinaria'>Reactivos Hematológicos</a></li></ul>
+
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Bioquímica</a><ul class='dropdown-menu'>
+        <li class='nav-item'><a href='#' data-tipo='1' data-categoria='3' class='nav-link btn-analizar_veterinaria'>Analizadores</a></li>
+        <li class='nav-item'><a href='#' data-tipo='2' data-categoria='3' class='nav-link btn-analizar_veterinaria'>Reactivos</a></li></ul>
+
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Cadena de Frío</a></li>
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Hematología</a></li>
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Equipamiento</a></li>
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Inmunología</a>
+        <ul class='dropdown-menu'>
+        <li class='nav-item'><a href='#' data-tipo='1' data-categoria='7' class='nav-link btn-analizar_veterinaria'>Analizadores</a>
+        </li>
+        <li class='nav-item'><a href='#' data-tipo='2' data-categoria='7' class='nav-link btn-analizar_veterinaria'>Pruebas rápidas</a></li>
+        <li class='nav-item'><a href='#' data-tipo='3' data-categoria='7' class='nav-link btn-analizar_veterinaria'>Reactivos de Eliza</a></li></ul>
+
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Repuestos</a></li>
+        <li class='nav-item'><a href='javascript:void(0);' class='nav-link'>Gass y Electrolitos</a></li></ul></li>";
+        //echo "<li class='nav-item'><a href='promociones.php' class='nav-link'>PROMOCIONES</a></li>";
+        echo "<li class='nav-item'><a href='contacto.php' class='nav-link'>CONTÁCTANOS</a></li>";
         echo "<li class='nav-item'><a href='login.php' class='nav-link'><i class='bx bx-user'></i> INICIAR SESIÓN</a></li>";
         break;
 

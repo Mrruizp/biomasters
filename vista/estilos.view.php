@@ -15,3 +15,5 @@
 <link rel="icon" type="image/png" href="../images/logo_v2.png">
 <link rel="stylesheet" href="../util/nivo-slider/css/nivo-slider.css">
 <link rel="stylesheet" href="../util/nivo-slider/css/mi-slider.css">
+<link href="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

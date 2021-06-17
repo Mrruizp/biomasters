@@ -131,14 +131,18 @@ require_once '../controlador/productoLosRecienLlegados.leer.datos.controller.php
         </div>
         <div class="products-slides owl-carousel owl-theme">
 <?php
+
 for ($i = 0; $i < 6; $i++) {
     if ($resultado[$i]['producto_id']) {
-        $id   = $resultado[$i]['producto_id'];
-        $ruta = "fotos/productos/$id.png";
+        $id              = $resultado[$i]['producto_id'];
+        $prodNombre      = $resultado[$i]['nombre'];
+        $prodDescripcion = $resultado[$i]['descripcion'];
+        $ruta            = "fotos/productos/$id.png";
         //echo $ruta;
         echo "<div class='single-products-box'>";
         echo "        <div class='image'>";
-        echo "            <a href='products-details.html' class='d-block'>";
+        //echo "            <a href='javascript:void(0);' class='d-block' onclick='LeerDatos_producto($id);'>";
+        echo "            <a href='javascript:void(0);' class='d-block link-producto-detalle' data-id = '$id'>";
         echo "                <img src='$ruta' alt='image'>";
         echo "            </a>";
         echo "            <ul class='buttons-list'>";
@@ -175,7 +179,7 @@ for ($i = 0; $i < 8; $i++) {
         echo "    <div class='col-lg-3 col-md-4 col-sm-6'>";
         echo "        <div class='single-products-box'>";
         echo "            <div class='image'>";
-        echo "                <a href='products-details.html' class='d-block'><img src='$ruta' alt='image'>";
+        echo "                <a href='producto-detalle.php' class='d-block' onclick='LeerDatos_producto($id);'><img src='$ruta' alt='image'>";
         echo "                </a>";
         echo "                <ul class='buttons-list'>";
         echo "                    <li>";
@@ -562,6 +566,7 @@ for ($i = 0; $i < 8; $i++) {
 
 <?php include_once 'scripts.view.php';?>
 <script src="js/index.js" type="text/javascript"></script>
+<!--<script src="js/gestionarProductoDetalle.js" type="text/javascript"></script>-->
 <!--<script src="js/productos.js" type="text/javascript"></script>-->
 
 

@@ -87,5 +87,37 @@ function leerDatos(codProducto) {
 }
 
 
+ $(".link-producto-detalle").on('click', function(){ // editar
+    let _id = $(this).data('id');
+    //let _nombre = $(this).data('nombre');
+
+    $.post
+            (
+                    "../controlador/producto.id.leer.datos.controller.php",
+                    {
+                        p_codProducto: _id
+                    }
+            ).done(function (resultado) {
+        var jsonResultado = resultado;
+        if (jsonResultado.estado === 200) {
+           let _nombre = jsonResultado.datos.nombre;
+           let _descripcion = jsonResultado.datos.descripcion;
+
+           //theString = theString.replace(/%20/g, "");
+
+           //let _url = "producto-detalle.php?Data1="+_id+"&Data2="+_nombre+"&Data3="+_descripcion;
+           
+           document.location.href = "producto-detalle.php?Data1="+_id+"&Data2="+_nombre+"&Data3="+_descripcion;
+        }
+    }).fail(function (error) {
+        var datosJSON = $.parseJSON(error.responseText);
+        swal("Error", datosJSON.mensaje, "error");
+    });
+    
+
+    
+})
+
+
 
 
